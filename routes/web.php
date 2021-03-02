@@ -38,14 +38,29 @@ use Illuminate\Support\Facades\Route;
 
 // ---------- PRAKTIKUM 2 single action controller-----------------
 
-Route::get('/', [App\Http\Controllers\HomeController::class, '__invoke']);
-Route::get('/about', [App\Http\Controllers\AboutController::class, '__invoke']);
-Route::get('/articles/{id}', [App\Http\Controllers\ArticleController::class, '__invoke']);
+// Route::get('/', [App\Http\Controllers\HomeController::class, '__invoke']);
+// Route::get('/about', [App\Http\Controllers\AboutController::class, '__invoke']);
+// Route::get('/articles/{id}', [App\Http\Controllers\ArticleController::class, '__invoke']);
 
 // ------------ AKHIR PRAKTIKUM 2 single action controller-----------
 
 
 //---------------- PRAKTIKUM 3 -----------------
+Route::prefix('')->group(function(){
+    Route::get('/', [App\Http\Controllers\Home3Controller::class,'index']);
+});
 
+Route::prefix('category')->group(function(){
+    Route::get('/{id}', [App\Http\Controllers\ProductController::class,'product']);
+});
 
+Route::get('/news/{id?}',[App\Http\Controllers\NewsController::class,'news']);
+
+Route::prefix('program')->group(function(){
+    Route::get('/{id}', [App\Http\Controllers\ProgramController::class,'program']);
+});
+
+Route::get('/aboutus',[App\Http\Controllers\AboutUsController::class,'aboutus']);
+
+Route::resource('contact', App\Http\Controllers\ContactController::class);
 //---------------- AKHIR PRAKTIKUM 3-------------
