@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, '__invoke']);
 // Route::get('/about', [App\Http\Controllers\AboutController::class, '__invoke']);
-// Route::get('/articles/{id}', [App\Http\Controllers\ArticleController::class, '__invoke']);
+// Route::get('/articles/{id}', [App\Http\Controllers\ArticlesController::class, '__invoke']);
 
 // ------------ AKHIR PRAKTIKUM 2 single action controller-----------
 
